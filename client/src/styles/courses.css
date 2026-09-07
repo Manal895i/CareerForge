@@ -1,0 +1,276 @@
+/* courses.css */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===== Topic-Specific Lesson Notes ===== */
+
+.lesson-notes-content {
+  background: linear-gradient(135deg, #f8fafc 0%, #f0fdfa 100%);
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  animation: notesFadeIn 0.4s ease forwards;
+}
+
+@keyframes notesFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.lesson-notes-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(13, 148, 136, 0.12);
+}
+
+.lesson-notes-header svg {
+  color: #0D9488;
+  flex-shrink: 0;
+}
+
+.lesson-notes-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0F172A;
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+/* Markdown rendered notes */
+.lesson-notes-markdown {
+  color: #1e293b;
+  font-size: 0.925rem;
+  line-height: 1.75;
+  font-family: 'Inter', sans-serif;
+}
+
+.lesson-notes-markdown h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 24px 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lesson-notes-markdown h2:first-child {
+  margin-top: 0;
+}
+
+.lesson-notes-markdown h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0D9488;
+  margin: 20px 0 10px 0;
+}
+
+.lesson-notes-markdown h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 16px 0 8px 0;
+}
+
+.lesson-notes-markdown p {
+  margin: 8px 0;
+  color: #334155;
+}
+
+.lesson-notes-markdown strong {
+  color: #0F172A;
+  font-weight: 600;
+}
+
+.lesson-notes-markdown ul,
+.lesson-notes-markdown ol {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.lesson-notes-markdown li {
+  margin: 4px 0;
+  color: #334155;
+}
+
+.lesson-notes-markdown li::marker {
+  color: #0D9488;
+}
+
+/* Code blocks */
+.lesson-notes-markdown pre {
+  background: #0F172A;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 14px 0;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lesson-notes-markdown pre code {
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* Inline code */
+.lesson-notes-markdown code {
+  background: rgba(13, 148, 136, 0.1);
+  color: #0D9488;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: 1px solid rgba(13, 148, 136, 0.12);
+}
+
+/* Tables */
+.lesson-notes-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 0.88rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.lesson-notes-markdown thead {
+  background: linear-gradient(135deg, #0D9488, #0F766E);
+}
+
+.lesson-notes-markdown th {
+  color: white;
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
+}
+
+.lesson-notes-markdown td {
+  padding: 9px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.lesson-notes-markdown tbody tr:nth-child(even) {
+  background: rgba(13, 148, 136, 0.03);
+}
+
+.lesson-notes-markdown tbody tr:hover {
+  background: rgba(13, 148, 136, 0.06);
+}
+
+/* Horizontal rule */
+.lesson-notes-markdown hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(13, 148, 136, 0.2), transparent);
+  margin: 20px 0;
+}
+
+/* Blockquotes */
+.lesson-notes-markdown blockquote {
+  border-left: 3px solid #0D9488;
+  padding: 8px 16px;
+  margin: 12px 0;
+  background: rgba(13, 148, 136, 0.04);
+  border-radius: 0 8px 8px 0;
+  color: #475569;
+  font-style: italic;
+}
+
+/* Empty notes state */
+.lesson-notes-empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: #94a3b8;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 2px dashed #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.lesson-notes-empty svg {
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.lesson-notes-empty h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0 0 6px 0;
+}
+
+.lesson-notes-empty p {
+  font-size: 0.88rem;
+  margin: 0;
+  color: #94a3b8;
+}
+
+/* Personal Notes Section */
+.personal-notes-section {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-top: 8px;
+}
+
+.personal-notes-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.personal-notes-section .text-muted {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0 0 14px 0;
+}
+
+.personal-notes-section .notes-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #1e293b;
+  background: #f8fafc;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 12px;
+}
+
+.personal-notes-section .notes-textarea:focus {
+  outline: none;
+  border-color: #0D9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+  background: white;
+}
+
+.personal-notes-section .notes-textarea::placeholder {
+  color: #94a3b8;
+}
