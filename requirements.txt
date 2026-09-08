@@ -1,0 +1,76 @@
+# ==============================================================================
+# LearnHub (CareerForge) - Project Requirements & Prerequisites Specification
+# ==============================================================================
+# NOTE FOR CONTRIBUTORS:
+# This project is a full-stack JavaScript MERN (MongoDB, Express, React, Node.js)
+# application. Dependencies are managed via npm / package.json rather than pip.
+# This file outlines all system, runtime, database, and environment requirements
+# needed to run this project smoothly without encountering runtime or build errors.
+# ==============================================================================
+
+[SYSTEM REQUIREMENTS]
+OS: Windows 10/11, macOS, or Linux (Ubuntu 20.04+)
+Node.js: >= 18.0.0 (Recommended: Node.js LTS 20.x or 22.x)
+npm: >= 9.0.0 (Included with Node.js)
+Git: >= 2.30.0
+
+[DATABASE REQUIREMENTS]
+MongoDB: Local MongoDB Community Server (>= 6.0) OR MongoDB Atlas Cloud URI
+MongoDB Compass (Optional): GUI for database inspection
+
+[BACKEND DEPENDENCIES (server/package.json)]
+# Installed automatically via: cd server && npm install
+- express ^4.21.2            # Core web application framework
+- mongoose ^8.9.5            # MongoDB object modeling and schema validation
+- jsonwebtoken ^9.0.2        # JWT user authentication and session management
+- bcryptjs ^2.4.3            # Password hashing and verification
+- cors ^2.8.5                # Cross-Origin Resource Sharing middleware
+- dotenv ^16.4.7             # Environment variable management
+- morgan ^1.10.0             # HTTP request logger middleware
+- nodemon ^3.1.9             # Development live-reload server (dev dependency)
+
+[FRONTEND DEPENDENCIES (client/package.json)]
+# Installed automatically via: cd client && npm install
+- react ^18.3.1              # Frontend UI library
+- react-dom ^18.3.1          # React DOM renderer
+- vite ^6.0.7                # Frontend build tool and development server
+- react-router-dom ^7.1.1    # Client-side routing
+- axios ^1.7.9               # HTTP client for API requests
+- @monaco-editor/react ^4.7.0 # Code editor for coding practice & test cases
+- framer-motion ^12.40.0     # UI animations and transitions
+- lucide-react ^1.24.0       # Icon library
+- react-icons ^5.6.0         # Additional UI icons
+- recharts ^3.8.1            # Data visualization and charts
+- react-markdown ^10.1.0     # Markdown rendering
+- react-player ^3.4.0        # Video/audio player
+- react-hot-toast ^2.6.0     # Toast notifications
+- tailwindcss ^3.4.19        # Utility-first CSS styling
+- postcss ^8.5.19            # CSS post-processing
+- autoprefixer ^10.5.3       # CSS vendor prefixing
+
+[MANDATORY ENVIRONMENT CONFIGURATION]
+# 1. Server Environment: copy server/.env.example to server/.env
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/learnhub
+JWT_SECRET=your_super_secret_jwt_key_change_in_production
+JWT_EXPIRES_IN=7d
+NODE_ENV=development
+
+# 2. Client Environment: copy client/.env.example to client/.env
+VITE_API_URL=http://localhost:5000/api
+
+[QUICK COMMANDS TO RUN WITHOUT ERRORS]
+# Step 1: Install Server Dependencies
+cd server && npm install
+
+# Step 2: Install Client Dependencies
+cd ../client && npm install
+
+# Step 3: Ensure MongoDB Service is Running
+# (On Windows: Run 'net start MongoDB' in Admin CMD, or start via Windows Services)
+
+# Step 4: Run Application
+# Windows users can double-click 'start.bat' in the project root.
+# Alternatively:
+# Terminal 1 (Backend):  cd server && npm run dev   (Runs on http://localhost:5000)
+# Terminal 2 (Frontend): cd client && npm run dev   (Runs on http://localhost:5173)
